@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
+    <title>eSHOP</title>
+    <!-- Don't forget to set your site up: http://google.com/webmasters -->
+    <meta name="google-site-verification" content="" />
+    <!-- Who owns the content of this site? -->
+    <meta name="Copyright" content="" />
+    <!--  Mobile Viewport
+    http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+    device-width : Occupy full width of the screen in its current orientation
+    initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+    maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Application-specific meta tags -->
+    <!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
+</head>
+
+<body class="appViews">
+    <nav class="navView">
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid subSections">
+            <div class="col-xs-4 pad-left">
+                <a href="#" id="mobile-nav"><i class="hdrIcons fa fa-bars" aria-hidden="true"></i></a>
+                <a href="#" id="formsearch"><i class="iconSearch hdrIcons fa fa-search" aria-hidden="true"></i></a>
+                <form role="search" method="get" id="searchform"  >
+                    <div class="input-group">
+                        <input type="text" id="searchbox" class="form-control" name="s" id="s">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default search-btn" style="height: 34px;" id="searchsubmit"  type="submit">
+                                <i class="iconSearch hdrIcons fa fa-times" aria-hidden="true" style=" left: 0;top: 0;"></i>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-4 text-center">
+                <p class="hdrNav">eSHOP</p>
+            </div>
+            <div class="col-xs-4 text-right pad-right">
+                <span class="hdrIcons fa-stack fa-lg" style="top:7px;right: 4px;">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-heart fa-stack-1x"></i>
+                </span>
+                <a href="#" class="icon-img">
+                    <img src="assets/img/cart.png"></i>
+                    <span class="countNum">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="clearfix"></div>
+    <div class="container-fluid appSection clearfix">
+        <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <!-- Overlay -->
+            <div class="overlay"></div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                <li data-target="#bs-carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slides active">
+                    <div class="slide-1"></div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-2"></div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footerWrap clearfix">
+        <div class="container-fluid contentWrapper">
+            <div class="headtag">
+                <h4>Bardot Longer Length</h4>
+                <h4>Midi Pencil Dress</h4>
+            </div>
+            <p class="priceValue"><strong class="priceCount"><i class="fa fa-gbp" aria-hidden="true"></i> 70.00</strong> <a href="#">Free Delivery & Returns <sup>*</sup></a></p>
+            <button class="tab-to-talk" type="button" id="chat">Having trouble deciding on a size?</button>
+            <div class="fade-bg"></div>
+            <div id="test">
+                <div class="popup-header">
+                    <div class="col-md-12">
+                        <a href="">
+                            <img src="assets/img/settingscog.png">
+                        </a>
+                        <a href="#" id="mini-popup" class="pull-right">
+                            <i class="fa fa-window-minimize" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="popup-body col-md-12">
+                    <div class="body-txt">
+                        <p class="first-txt">Hi there, I'm Pi.</p>
+                        <p class="second-txt">I'm your new personal fitting assistant.</p>
+                        <div class="range" style="padding-bottom:15px !important;">
+                            <div class="range_header">
+                                I can find your size in just one click
+                            </div>
+                            <div id="quote-input" class="slider-input quote-input">
+                                <label>Height</label>
+                                <div id="slider-range-max" class="slider slider-range-max">
+                                    <span class="ui-slider-handle"></span>
+                                </div>
+                                <div id="minus" class="minus"><i class="fa fa-minus" aria-hidden="true"></i></div>
+                                <input type="text" id="cap" class="slider-value cap" disabled="disabled">
+                                <div id="plus" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                                <div class="btn-group btn-toggle">
+                                    <button class="btn btn-default">ft/in</button>
+                                    <button class="btn btn-primary active">cm</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <hr>
+                            </div>
+                            <div id="quote-input1" class="slider-input quote-input">
+                                <label>Weight</label>
+                                <div id="slider-range-max1" class="slider slider-range-max">
+                                    <span class="ui-slider-handle"></span>
+                                </div>
+                                <div id="minus1" class="minus"><i class="fa fa-minus" aria-hidden="true"></i></div>
+                                <input type="text" id="cap1" class="slider-value cap" disabled="disabled">
+                                <div id="plus1" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                                <div class="btn-group btn-toggle">
+                                    <button class="btn btn-default">st/lb</button>
+                                    <button class="btn btn-primary active">kg</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="error_msg text-center"><i class="fa fa-exclamation" aria-hidden="true"></i> Select your measurements</p>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <div class="col-md-12">
+                        <img src="assets/img/loader.gif" alt="loader" class="loader" />
+                        <button type="button" class="tell-me-my-size" id="tell-me-my-size">
+                            Tell me my size
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <!-- Bootstrap and Jquery Scripts -->
+    <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>
