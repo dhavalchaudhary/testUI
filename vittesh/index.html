@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pixibo | e-shop UI</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" href="css/powerange.css" />
+	<script src="js/powerange.js"></script>
+	
+	<style>
+		body {
+			background-image: url("img/bg.png");
+			background-repeat: no-repeat;
+        }
+	</style>
+	
+</head>
+<body>
+<div class="container">
+   <div id="abovebottom" class="center">
+        <button id="button">Having trouble deciding on a size?</button>
+   </div>
+   <div id="myModal" class="popup">
+		<div class="popup-header">
+		<span class="close">&#128469;</span>
+		<span class="setting">
+		<img src="img/settingscog.png"
+		</span>
+		</div>
+
+   
+		<div class="popup-content">
+		<div class="bubble">
+		<p>Hi there, I'm Pi.</p>
+		</div>
+		<div class="bubble2">
+		<p>I’m your new personal fitting assistant.</p>
+		</div>
+		<div class="bubble3">
+		<p>I can find your size in just one click</p>
+		</div>
+		<div class="bubble4" id="shadow">
+		<div class="bubble4-text">
+		<p>Height</p>
+		</div>
+		<div class="slider">
+		<input type="range" min="0" max="190" data-rangeSlider>
+		</div>
+		<div class="slider">
+        
+        </div>
+		<div class="bubble4-text">
+		<p>Weight</p>
+		</div>
+		<div class="slider">
+		<input type="range" min="0" max="80" data-rangeSlider>
+		</div>
+		<div class="slider">
+        </div>
+		</div>
+		</div>
+		
+		<div class="popup-footer">
+		<span class="setting">
+		<img src="img/loading-dots.gif"
+		</span>
+		</div>
+
+   </div>
+</div>
+<script src="js/rangeSlider.js"></script>
+    <script>
+        (function () {
+            var selector = '[data-rangeSlider]',
+                    elements = document.querySelectorAll(selector);
+            // Example functionality to demonstrate a value feedback
+            function valueOutput(element) {
+                var value = element.value,
+                        output = element.parentNode.getElementsByTagName('output')[0];
+                output.innerHTML = value;
+            }
+            for (var i = elements.length - 1; i >= 0; i--) {
+                valueOutput(elements[i]);
+            }
+            Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).forEach(function (el) {
+                el.addEventListener('input', function (e) {
+                    valueOutput(e.target);
+                }, false);
+            });
+            
+            // Example functionality to demonstrate programmatic value changes
+            var changeValBtn = document.querySelector('#js-example-change-value button');
+            changeValBtn.addEventListener('click', function (e) {
+                var inputRange = changeValBtn.parentNode.querySelector('input[type="range"]'),
+                        value = changeValBtn.parentNode.querySelector('input[type="number"]').value;
+                inputRange.value = value;
+                inputRange.dispatchEvent(new Event('change'));
+            }, false);
+            
+            
+            // Basic rangeSlider initialization
+            rangeSlider.create(elements, {
+                // Callback function
+                onInit: function () {
+                },
+                // Callback function
+                onSlideStart: function (value, percent,  position) {
+                    console.info('onSlideStart', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+                },
+                // Callback function
+                onSlide: function (value, percent,  position) {
+                    console.log('onSlide', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+                },
+                // Callback function
+                onSlideEnd: function (value, percent,  position) {
+                    console.warn('onSlideEnd', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+                }
+            });
+        })();
+    </script>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "inline";
+	btn.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+	btn.style.display = "block";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+$('#bubble').each(function(){
+    var inner = $(this).find('p');
+    $(this).height(inner.outerHeight(true));
+    $(this).width(inner.outerWidth(true)); 
+});
+</script>
+</body>
+</html>
